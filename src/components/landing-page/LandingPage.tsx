@@ -27,6 +27,7 @@ const LandingPage = () => {
           width={800}
           height={500}
           className="rounded-lg"
+          priority
         />
       </motion.div>
     </motion.div>

@@ -3,8 +3,9 @@ import { SymbolPriceDataProps } from "../types/types";
 
 export  const useUpdatedPrice  = (priceData:SymbolPriceDataProps, symbol:string) => {
     const [updatePrice, setUpdatePrice] = useState<SymbolPriceDataProps>(priceData)
+    console.log(process.env.FINNHUB_API_KEY as string, "ENV")
     useEffect(()=>{
-    const ws = new WebSocket(`wss://ws.finnhub.io?token=${process.env.FINNHUB_API_KEY}`);
+    const ws = new WebSocket(`wss://ws.finnhub.io?token=${process.env.NEXT_PUBLIC_FINNHUB_API_KEY}`);
 
     ws.onopen = () => {
         ws.send(JSON.stringify({ type: 'subscribe', symbol }));

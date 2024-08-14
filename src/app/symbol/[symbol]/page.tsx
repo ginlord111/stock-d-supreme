@@ -1,6 +1,6 @@
 import { basePath } from '@/constant/constant';
 import Image from 'next/image';
-import React from 'react';
+import React, { Fragment } from 'react';
 import SymbolPage from './_components/SymbolPage';
 import NotFound from './_components/NotFound';
 
@@ -28,17 +28,25 @@ const SymbolPageContainer = async ({ params }: { params: { symbol: string } }) =
         const priceData = await priceUrl.json();
 
         return (
-            <div className="text-white p-8 flex items-center justify-center lg:pt-[17rem] pt-[2rem]">
-                {symbolData.name ? (
-                   <SymbolPage symbolData={symbolData} priceData={priceData}/>
-                ) : (
-                    <NotFound  text={`No data found in symbol ${symbol}`}/>
-                )}
-            </div>
+          <Fragment>
+            {symbolData.name ? (
+                   <div className="text-white p-8 flex items-center justify-center lg:pt-[10rem] pt-[2rem]">
+                     <SymbolPage symbolData={symbolData} priceData={priceData}/>
+                   </div>
+            ) : (
+                <div className='relative mt-[18rem]'>
+                <NotFound  text={`No data found in symbol ${symbol}`}/>
+                </div>
+            )}
+          </Fragment>
         );
     } catch (error) {
       console.log(error, "ERROR")
-        return <NotFound  text={`Something went wrong in fetching symbol ${symbol}. Search another symbol`}/>
+        return (
+            <div className='relative mt-[18rem]'>
+                <NotFound  text={`Something went wrong in fetching symbol ${symbol}. Search another symbol`}/>
+            </div>
+        )
     }
 };
 
