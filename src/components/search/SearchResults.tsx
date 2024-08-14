@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import { SearchSymbolProps } from '../../../types/types';
+import { SearchSymbolProps } from '@/types/types';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
