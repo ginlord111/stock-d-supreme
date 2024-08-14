@@ -18,10 +18,10 @@ Follow these steps to set up the project locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/my-repo-name.git
+git clone https://github.com/ginlord111/stock-d-supreme.git
 
 # Navigate into the project directory
-cd your-repo-name
+cd sotck-d-supreme
 
 # Install dependencies
 npm install
