@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { SymbolPriceDataProps } from "../../../types/types";
+import { SymbolPriceDataProps } from "../types/types";
 
 export  const useUpdatedPrice  = (priceData:SymbolPriceDataProps, symbol:string) => {
     const [updatePrice, setUpdatePrice] = useState<SymbolPriceDataProps>(priceData)

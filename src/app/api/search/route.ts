@@ -1,6 +1,6 @@
-import { basePath } from "@/app/constant/constant";
+import { basePath } from "@/constant/constant";
 import { NextRequest, NextResponse } from "next/server";
-import { SearchSymbolProps } from "../../../../types/types";
+import { SearchSymbolProps } from "../../../types/types";
 
 export async function GET(req:NextRequest){
     const url = new URL(req.url);

@@ -2,9 +2,9 @@
 import {
   SymbolPriceDataProps,
   SymbolProfileDataProps,
-} from "../../../../../types/types";
+} from "../../../../types/types";
 import Image from "next/image";
-import { useUpdatedPrice } from "@/app/hooks/useUpdatePrice";
+import { useUpdatedPrice } from "@/hooks/useUpdatePrice";
 const SymbolPage = ({
   symbolData,
   priceData,
@@ -12,8 +12,7 @@ const SymbolPage = ({
   symbolData: SymbolProfileDataProps;
   priceData: SymbolPriceDataProps;
 }) => {
-
-    /// a custom hook for updating the price in real time using websocket
+  /// a custom hook for updating the price in real time using websocket
   const updatedPrice = useUpdatedPrice(priceData, symbolData.name);
   return (
     <div className="flex flex-col items-center">

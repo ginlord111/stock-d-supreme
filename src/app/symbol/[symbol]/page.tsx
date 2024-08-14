@@ -1,4 +1,4 @@
-import { basePath } from '@/app/constant/constant';
+import { basePath } from '@/constant/constant';
 import Image from 'next/image';
 import React from 'react';
 import SymbolPage from './_components/SymbolPage';
